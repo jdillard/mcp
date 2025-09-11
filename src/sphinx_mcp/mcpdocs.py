@@ -54,9 +54,7 @@ class MCPToolsDirective(SphinxDirective):
                     else None
                 )
                 tool_meta = (
-                    nodes.literal_block(
-                        text=json.dumps(tool.meta.model_dump(), indent=2)
-                    )
+                    nodes.literal_block(text=json.dumps(tool.meta, indent=2))
                     if tool.meta
                     else None
                 )
@@ -120,9 +118,7 @@ class MCPPromptsDirective(SphinxDirective):
                         )
                     )
                 prompt_meta = (
-                    nodes.literal_block(
-                        text=json.dumps(prompt.meta.model_dump(), indent=2)
-                    )
+                    nodes.literal_block(text=json.dumps(prompt.meta, indent=2))
                     if prompt.meta
                     else None
                 )
@@ -184,9 +180,7 @@ class MCPResourcesDirective(SphinxDirective):
                     else None
                 )
                 resource_meta = (
-                    nodes.literal_block(
-                        text=json.dumps(resource.meta.model_dump(), indent=2)
-                    )
+                    nodes.literal_block(text=json.dumps(resource.meta, indent=2))
                     if resource.meta
                     else None
                 )
@@ -258,7 +252,7 @@ class MCPResourceTemplatesDirective(SphinxDirective):
                 )
                 resource_template_meta = (
                     nodes.literal_block(
-                        text=json.dumps(resource_template.meta.model_dump(), indent=2)
+                        text=json.dumps(resource_template.meta, indent=2)
                     )
                     if resource_template.meta
                     else None
